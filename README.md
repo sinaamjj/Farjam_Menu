@@ -1,6 +1,6 @@
 # Farjam Cafe Menu
 
-This project is built with Vite and is intended to be deployed to **Cloudflare Pages**. The Pages deployment must use the `wrangler pages deploy` command; running `wrangler deploy` will fail because that command is for Workers projects.
+This project is built with Vite and can be deployed either to **Cloudflare Pages** or as a **Cloudflare Worker with static assets**. The Worker fallback ensures that even environments that still call `wrangler deploy` (instead of `wrangler pages deploy`) will publish a working build.
 
 ## Build
 
@@ -21,3 +21,14 @@ pnpm run build
    This builds the project and then calls `wrangler pages deploy ./dist/public --project-name=farjam-cafe-menu` under the hood.
 
 If your CI/CD pipeline previously used `npx wrangler deploy`, change it to `pnpm run deploy` (or `pnpm run deploy:pages`) so the Pages-specific command is executed. A GitHub Actions workflow is provided at `.github/workflows/cloudflare-pages.yml` that performs the correct Pages deployment after building the site.
+
+## Deploy as a Worker (for environments that run `wrangler deploy`)
+
+Some CI/CD platforms default to `wrangler deploy`. A lightweight Worker wrapper is included so those pipelines succeed without additional configuration.
+
+```sh
+pnpm run build
+npx wrangler deploy
+```
+
+The Worker serves the static assets from `dist/public` and falls back to `index.html` for SPA routes, matching the Cloudflare Pages behavior.
