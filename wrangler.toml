@@ -1,0 +1,6 @@
+name = "farjam-cafe-menu"
+compatibility_date = "2025-02-01"
+pages_build_output_dir = "./dist/public"
+
+[assets]
+directory = "./dist/public"
