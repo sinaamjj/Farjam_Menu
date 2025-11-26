@@ -1,5 +1,9 @@
 name = "farjam-cafe-menu"
 compatibility_date = "2025-02-01"
+
+# This repository targets Cloudflare Pages. Use `wrangler pages deploy` (or the
+# `pnpm run deploy` shortcut) to publish the contents of `dist/public`. Running
+# `wrangler deploy` will fail because that command is for Workers projects.
 pages_build_output_dir = "./dist/public"
 
 [assets]

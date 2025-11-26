@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
+    "deploy": "pnpm run deploy:pages",
     "deploy:pages": "wrangler pages deploy ./dist/public --project-name=farjam-cafe-menu",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
