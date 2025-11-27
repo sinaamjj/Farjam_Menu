@@ -10,7 +10,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-4">تماس با ما</h3>
             <a
               href="tel:026-34449251"
@@ -18,7 +18,7 @@ export default function Footer() {
             >
               026-34449251
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Copyright */}
