@@ -1,0 +1,14 @@
+name = "farjam-cafe-menu"
+compatibility_date = "2025-02-01"
+
+# Deploy as a Worker with static assets so both `wrangler deploy` and
+# `wrangler pages deploy` are supported. `assets.directory` points to the Vite
+# build output.
+main = "_worker.js"
+
+[assets]
+directory = "./dist/public"
+binding = "ASSETS"
+
+[build]
+command = "pnpm run build"
