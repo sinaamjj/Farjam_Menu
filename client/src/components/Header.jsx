@@ -11,6 +11,19 @@
 //   );
 // }
 
+// export default function Header() {
+//   return (
+//     <header className="bg-gradient-to-b from-amber-50 to-white shadow-md z-50">
+//       <div className="flex items-center container justify-center mx-auto px-4 py-8 text-center">
+//         {/* Café Name */}
+//         <h1 className="text-5xl font-bold text-amber-900 mb-2 text-right">
+//           کافه فرجام
+//         </h1>
+//       </div>
+//     </header>
+//   );
+// }
+
 import { Moon, Sparkles, Sun } from "lucide-react";
 
 export default function Header({
@@ -22,7 +35,7 @@ export default function Header({
 }) {
   return (
     <header className="sticky top-0 bg-white/85 dark:bg-gray-900/85 backdrop-blur-lg shadow-md z-50 border-b border-amber-100/60 dark:border-gray-800">
-      <div className="container mx-auto px-4 py-6 space-y-5">
+      <div className="container mx-auto px-4 py-3 space-y-5">
         {/* <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="text-right space-y-2">
             <h1 className="text-4xl md:text-5xl font-extrabold text-amber-900 dark:text-amber-100 leading-tight">
@@ -73,8 +86,8 @@ export default function Header({
           </button>
         </div>
 
-        <div className="bg-white dark:bg-gray-800/80 border border-amber-100 dark:border-gray-700 rounded-2xl p-4 shadow-sm">
-          <div className="mt-4 flex gap-3 pt-1 overflow-x-auto pb-4">
+        <div className="bg-white dark:bg-gray-800/80 border border-amber-100 dark:border-gray-700 rounded-2xl p-2 shadow-sm">
+          <div className="mt-2 flex gap-3 overflow-x-auto pb-2">
             {categories.map(category => (
               <button
                 key={category.id}
