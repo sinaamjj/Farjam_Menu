@@ -1,34 +1,36 @@
-# Farjam Cafe Menu
+# Farjam Cafe Menu ☕
 
-This project is built with Vite and can be deployed either to **Cloudflare Pages** or as a **Cloudflare Worker with static assets**. The Worker fallback ensures that even environments that still call `wrangler deploy` (instead of `wrangler pages deploy`) will publish a working build.
+وب‌اپلیکیشن **Farjam Cafe Menu** یک منوی دیجیتال برای کافه فرجام است که با **React** و **Vite** توسعه داده شده و از **Tailwind CSS** و مجموعه کامپوننت‌های **Radix UI** برای طراحی مدرن بهره می‌برد. این پروژه بر اساس یک **SPA** (برنامهٔ تک‌صفحه‌ای) طراحی شده است و از زیرساخت **Cloudflare** پشتیبانی می‌کند تا بتواند هم به‌صورت **Pages** و هم به‌صورت **Worker** همراه با فایل‌های استاتیک دیپلوی شود:contentReference[oaicite:0]{index=0}.
 
-## Build
+## ✨ ویژگی‌ها
 
-```sh
+- **ساخته شده با React و Vite** – سرعت بالای توسعه و بارگذاری.
+- **استایل‌بندی مدرن** – استفاده از Tailwind CSS، Radix UI و انیمیشن‌های Framer Motion برای رابط کاربری واکنش‌گرا و مینیمال.
+- **فراخوانی داده** – استفاده از React Query و Axios برای مدیریت درخواست‌ها به سرور.
+- **اجزای پیشرفته** – شامل فرم‌های واکنشی (React Hook Form)، اعتبارسنجی با Zod، کاروسل (Embla Carousel)، نمودارها (Recharts) و آیکون‌های Lucide.
+- **قابلیت تم تیره/روشن** – به کمک `next-themes` رابط کاربری در حالت‌های مختلف قابل مشاهده است.
+- **اعلان‌ها و تعاملات** – استفاده از Sonner برای toast های زیبا، CMDK برای command palette و Radix Dialog/Menu برای منوها و دیالوگ‌ها.
+- **سرویس‌دهی استاتیک** – در حالت Worker، فایل‌های ساخته‌شده از مسیر `dist/public` سرو می‌شوند و برای مسیرهای SPA به `index.html` برمی‌گردند:contentReference[oaicite:1]{index=1}.
+
+## 📦 پیش‌نیازها
+
+- **Node.js** (نسخه‌های اخیر LTS)
+- **pnpm** به‌عنوان مدیر بسته
+- حساب Cloudflare برای دیپلوی (در صورت انتشار)
+
+## 🚀 شروع سریع
+
+### نصب وابستگی‌ها و اجرای محلی
+
+```bash
+# دریافت وابستگی‌ها
 pnpm install
+
+# اجرای برنامه در حالت توسعه (با hot reload)
+pnpm run dev
+
+# بیلد نهایی برای تولید
 pnpm run build
-```
 
-## Deploy to Cloudflare Pages
-
-1. Ensure you have `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` available in your environment.
-2. Run the combined build-and-deploy command:
-
-   ```sh
-   pnpm run deploy
-   ```
-
-   This builds the project and then calls `wrangler pages deploy ./dist/public --project-name=farjam-cafe-menu` under the hood.
-
-If your CI/CD pipeline previously used `npx wrangler deploy`, change it to `pnpm run deploy` (or `pnpm run deploy:pages`) so the Pages-specific command is executed. A GitHub Actions workflow is provided at `.github/workflows/cloudflare-pages.yml` that performs the correct Pages deployment after building the site.
-
-## Deploy as a Worker (for environments that run `wrangler deploy`)
-
-Some CI/CD platforms default to `wrangler deploy`. A lightweight Worker wrapper is included so those pipelines succeed without additional configuration.
-
-```sh
-pnpm run build
-npx wrangler deploy
-```
-
-The Worker serves the static assets from `dist/public` and falls back to `index.html` for SPA routes, matching the Cloudflare Pages behavior.
+# پیش‌نمایش بیلد تولید
+pnpm run preview
