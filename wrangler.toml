@@ -1,4 +1,4 @@
-name = "farjam-cafe-menu"
+name = "farjam1"
 compatibility_date = "2025-02-01"
 
 # Deploy as a Worker with static assets so both `wrangler deploy` and
